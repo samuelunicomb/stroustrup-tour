@@ -16,6 +16,10 @@ class stroustrup
 
     void ch02s02 ();
     void ch02s03 ();
+
+    void ch03 ();
+    void ch06 ();
+    void ch08 ();
 };
 
 //#endif

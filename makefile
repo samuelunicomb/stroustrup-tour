@@ -6,7 +6,7 @@
 #
 # also check that LD_LIBRARY_PATH on debian contains path to mpfr and gmp libs
 
-STD := -std=c++14
+STD := -std=c++17
 CXX := g++ $(STD)
 SRCDIR := src
 BUILDDIR := build
@@ -17,7 +17,7 @@ SRCTREE := $(shell find $(SRCDIR) \! -path '*/\.*' -type d)
 BUILDTREE := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SRCTREE)/%)
 SOURCES := $(shell find $(SRCDIR) \! -path '*/\.*' -type f -name "*.$(SRCEXT)")
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CXXFLAGS = -Wall -g -O3 -ferror-limit=1
+CXXFLAGS = -Wall -g -O3 -ferror-limit=1 -Wno-unused-function -Wno-unused-variable
 LIB := -L${HOME}/.mpfr/lib -lmpfr -L${HOME}/.gmp/lib -lgmp
 INC := -I include
 

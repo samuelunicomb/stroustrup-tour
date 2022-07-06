@@ -1,9 +1,11 @@
+#include "stroustrup.h"
+
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-class Vector
+static class Vector
 {
   public:
     Vector ()
@@ -26,14 +28,14 @@ class Vector
     int c;
 };
 
-int sum (const vector<int> &v)
+static int sum (const vector<int> &v)
 {
   int s = 0;
   for (const int i : v) s += i;
   return s;
 }
 
-int main ()
+void stroustrup::ch03 ()
 {
   Vector v {6};
 
